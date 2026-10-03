@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actors</title>
+</head>
+<body>
+  <h1>Actors by Noshitha</h1>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    Peter Pan: <input type="password" id="actor" value="Robin Williams"><br>
+    Who is the actor: <input type="text" id="guess"><br>
+    <input type="button" value="Check the guess" onclick="checkActor()">
+</form>
+
+
+<p id="result"></p>
+
+<script>
+var correct = 0
+var notCorrect = 0
+
+function checkActor() {
+    var actor = document.getElementById("actor").value
+    var guess = document.getElementById("guess").value
+
+    if (actor == guess) {
+        correct = correct + 1
+        alert("That's right")
+    } else {
+        notCorrect = notCorrect + 1
+        alert("Better luck next time")
+    }
+
+    document.getElementById("result").innerHTML = "Correct: " + correct + " Not correct: " + notCorrect
+}
+</script>
+
+</body>
+</html> 
