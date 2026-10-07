@@ -12,12 +12,10 @@
 <form>
     Peter Pan: <input type="password" id="actor" value="Robin Williams"><br>
     Who is the actor: <input type="text" id="guess"><br>
-    <input type="button" value="Check the guess" onclick="checkActor()">
+    <input type="button" id="checkBtn" value="Check the guess" onclick="checkActor()">
 </form>
 
-
-<p id="result"></p>
-
+<div id="result"></div>
 <script>
 var correct = 0
 var notCorrect = 0
@@ -35,6 +33,13 @@ function checkActor() {
     }
 
     document.getElementById("result").innerHTML = "Correct: " + correct + " Not correct: " + notCorrect
+    
+    if (notCorrect > 10) {
+    document.getElementById("checkBtn").setAttribute("onclick", "tooMany()");
+}
+}
+function tooMany() {
+    alert("Sorry, too many wrong guesses.")
 }
 </script>
 
@@ -51,15 +56,15 @@ function checkActor() {
     switch (usePic) {
       case 1:
         pic.src = "food1.jpg";
-        usePic = 1;
+        usePic = 2;
         break;
       case 2:
         pic.src = "food2.jpg";
-        usePic = 2;
+        usePic = 3;
         break;
       case 3:
         pic.src = "food3.jpg";
-        usePic = 3;
+        usePic = 1;
         break;
     }
   }
