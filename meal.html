@@ -38,5 +38,29 @@
   }
 </script>
 
+<form>
+  <label for="cuisine">Enter cuisine type</label>
+  <input type="text" id="cuisine" value="Italian"><br>
+
+  <label for="beverage">Enter beverage choice</label>
+  <input type="text" id="beverage" value="water"><br>
+
+  <button type="button" onclick="updateMeal()">Update the meal plan</button>
+</form>
+
+<script>
+function updateMeal() {
+  var cuisine = document.getElementById("cuisine").value;
+  var beverage = document.getElementById("beverage").value;
+
+
+  my_meal_plan["cuisine"] = cuisine;
+  my_meal_plan["beverage"] = beverage;
+
+
+  document.getElementById("result").innerHTML = my_meal_plan;
+}
+</script>
+
 </body>
 </html> 
