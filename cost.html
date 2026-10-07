@@ -48,6 +48,39 @@
     document.getElementById("results").innerHTML = "Costs are: " + costs;
   }
 </script>
+--------
+
+<form>
+  <input type="radio" name="op" id="opMul" value="mul" onclick="chooseOp()">
+  <label for="opMul">product</label><br>
+
+  <input type="radio" name="op" id="opAdd" value="add" onclick="chooseOp()">
+  <label for="opAdd">sum</label><br>
+
+  <input type="radio" name="op" id="opDiv" value="div" onclick="chooseOp()">
+  <label for="opDiv">divide</label>
+</form>
+<p id="opResults"></p>
+
+<script>
+function chooseOp() {
+  var count = Number(document.getElementById("numberItems").value);
+  var discountAt = Number(document.getElementById("numberForDiscount").value);
+
+  var text = "";
+
+ 
+  if (document.getElementById("opMul").checked) {
+    text = count + " times " + discountAt + " is " + (count * discountAt);
+  } else if (document.getElementById("opAdd").checked) {
+    text = count + " plus " + discountAt + " is " + (count + discountAt);
+  } else if (document.getElementById("opDiv").checked) {
+    text = count + " divided by " + discountAt + " is " + (count / discountAt);
+  }
+
+  document.getElementById("opResults").innerHTML = text;
+}
+</script>
 
 </body>
 </html> 
