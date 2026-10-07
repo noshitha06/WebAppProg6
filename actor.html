@@ -38,5 +38,31 @@ function checkActor() {
 }
 </script>
 
+<div id="picContainer">
+<img id="foodPic" src="food3.jpg" width="150" height="150" onclick="updatePic()">
+</div>
+
+<script>
+  var usePic = 1;
+
+  function updatePic() {
+    var pic = document.getElementById("foodPic");
+
+    switch (usePic) {
+      case 1:
+        pic.src = "food1.jpg";
+        usePic = 1;
+        break;
+      case 2:
+        pic.src = "food2.jpg";
+        usePic = 2;
+        break;
+      case 3:
+        pic.src = "food3.jpg";
+        usePic = 3;
+        break;
+    }
+  }
+</script>
 </body>
 </html> 

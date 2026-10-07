@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <title>Sales Cost Computation</title>
+<body>
+
+<h1>Noshitha sales computation</h1>
+
+<form>
+<label for="numberItems">Enter number items</label>
+<input type="number" id="numberItems" value="1"><br>
+
+<label for="itemCost">Enter the cost of one item</label>
+<input type="number" id="itemCost" value="20.0"><br>
+
+<label for="numberForDiscount">Enter number to get discount</label>
+<input type="number" id="numberForDiscount" value="10"><br>
+
+<label for="DiscountRate">Enter the discount rate</label>
+<input type="number" id="DiscountRate" value="0.15""><br>
+</form>
+<button onclick="doDiscount()">Show costs</button>
+
+<p id="results"></p>
+
+<script>
+  function doDiscount() {
+    var number = Number(document.getElementById("numberItems").value);
+    var cost = Number(document.getElementById("itemCost").value);
+    var discountRate = Number(document.getElementById("DiscountRate").value);
+    var discountAt = Number(document.getElementById("numberForDiscount").value);
+
+    var costs = "";
+
+    for (var i = 1; i <= 5; i++) {
+      var checkCount = i * number;
+      var total;
+
+      if (checkCount <= discountAt) {
+        total = checkCount * cost;
+      } else {
+        total = (discountAt * cost) + ((checkCount - discountAt) * cost * (1 - discountRate));
+      }
+
+        costs += "checkCount " + checkCount + " is " + total + "; ";
+    }
+
+
+    document.getElementById("results").innerHTML = "Costs are: " + costs;
+  }
+</script>
+
+</body>
+</html> 
