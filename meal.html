@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <title>Meal Planner</title>
+<body>
+
+<h2>Noshitha Meal Planner</h2>
+
+<form>
+  <input type="checkbox" id="breakfast" value="True">
+  <label for="breakfast">Breakfast</label><br>
+
+  <input type="checkbox" id="lunch" value="False">
+  <label for="lunch">Lunch</label><br>
+
+  <input type="checkbox" id="dinner" value="True">
+  <label for="dinner">Dinner</label>
+</form>
+
+<button type="button" onclick="choices()">Meal Plan Choices</button>
+
+<p id="result"> </p>
+
+<script>
+  var my_meal_plan = {};
+</script>
+
+<script>
+  var my_meal_plan = {};
+
+  function choices() {
+    my_meal_plan = {};
+
+    my_meal_plan.breakfast = document.getElementById("breakfast").checked;
+    my_meal_plan.lunch = document.getElementById("lunch").checked;
+    my_meal_plan.dinner = document.getElementById("dinner").checked;
+
+    document.getElementById("result").innerHTML = my_meal_plan;
+  }
+</script>
+
+</body>
+</html> 
